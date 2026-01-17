@@ -1,0 +1,38 @@
+if getgenv().Loaded then return end
+getgenv().Loaded = true
+
+local PlaceId = game.PlaceId
+
+local function run(url)
+    pcall(function()
+        (loadstring or load)(game:HttpGet(url, true))()
+    end)
+end
+
+local games = {
+    -- Arsenal
+    [286090429] = "https://codeberg.org/cypherthegreat67-blip/ChaosHub/raw/branch/main/Arsenal/Protected-Arsenal.lua",
+
+    -- Break In 2
+    [13864661000] = "https://codeberg.org/cypherthegreat67-blip/NOOBS/raw/branch/main/Gooners/Protected-Nerd.lua",
+
+    -- Chess Club (i also need to get the tournaments id bruh) 
+    [139394516128799] = "https://pastefy.app/SNBGDiVE/raw",
+
+    -- Salinitary Confinement
+    [129945807589999] = "https://pastebin.com/raw/TAEqmPEe",
+
+    -- Flee The Facility
+    [3956818381] = "https://pastebin.com/raw/xH7JiLB8",
+
+    -- Zombie Attack
+    [171391948] = "https://pastebin.com/raw/90jAN2ja",
+
+    -- Scary Shawarma (2 place id i hate ts)
+    [137826330724902] = "https://pastefy.app/AnLB9PJO/raw",
+    [128001665358186] = "https://pastefy.app/AnLB9PJO/raw"
+}
+
+if games[PlaceId] then
+    run(games[PlaceId])
+end
